@@ -15,7 +15,7 @@ module.exports = {
     'plugin:react/recommended',
     'plugin:react/jsx-runtime',
   ],
-  ignorePatterns: ['dist', '.eslintrc.cjs', '.prettierrc'],
+  ignorePatterns: ['dist', '.eslintrc.cjs', '.prettierrc', 'tailwind.config.js', 'postcss.config.js'],
   parser: '@typescript-eslint/parser',
   plugins: ['react-refresh'],
   rules: {
