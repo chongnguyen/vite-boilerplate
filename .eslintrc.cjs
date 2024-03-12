@@ -24,5 +24,14 @@ module.exports = {
       { allowConstantExport: true },
     ],
     'react/jsx-no-target-blank': 'off',
+    'no-unused-vars': 'off',
+    '@typescript-eslint/no-misused-promises': 'off',
+    '@typescript-eslint/require-await': 'off',
+    'no-restricted-imports': [
+      'error',
+      {
+        patterns: ['@/features/*/*', '@/components/*/*'],
+      },
+    ],
   },
 }
