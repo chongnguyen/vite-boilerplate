@@ -27,6 +27,7 @@ module.exports = {
     'no-unused-vars': 'off',
     '@typescript-eslint/no-misused-promises': 'off',
     '@typescript-eslint/require-await': 'off',
+    'react/prop-types': ['error', { ignore: ['className'] }],
     'no-restricted-imports': [
       'error',
       {
