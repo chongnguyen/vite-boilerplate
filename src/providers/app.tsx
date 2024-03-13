@@ -1,6 +1,8 @@
 import { ReactNode } from 'react'
 import { AuthProvider } from '@/providers/authentication'
 import { HelmetProvider } from 'react-helmet-async'
+import { QueryClientProvider } from '@tanstack/react-query'
+import { queryClient } from '@/libs'
 
 export const AppProvider = ({
   children,
@@ -10,7 +12,9 @@ export const AppProvider = ({
   return (
     <>
       <HelmetProvider>
-        <AuthProvider>{children}</AuthProvider>
+        <QueryClientProvider client={queryClient}>
+          <AuthProvider>{children}</AuthProvider>
+        </QueryClientProvider>
       </HelmetProvider>
     </>
   )
