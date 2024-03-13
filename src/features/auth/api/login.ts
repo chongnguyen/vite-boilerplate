@@ -1,4 +1,6 @@
 import { TAuthUser } from '@/features/auth'
+import { useMutation } from '@tanstack/react-query'
+import { queryClient } from '@/libs/react-query'
 
 const user: TAuthUser = {
   id: '123',
@@ -24,4 +26,19 @@ export const login = async ({
     user,
     accessToken,
   }
+}
+
+export const useLogin = ({
+  credentials,
+}: {
+  credentials: TLoginCredentialsDTO
+}) => {
+  return useMutation<TLoginResponse, Error, TLoginCredentialsDTO>({
+    mutationKey: ['login', credentials],
+    mutationFn: login,
+    onSuccess: () => {
+      // Invalidate and refetch
+      void queryClient.invalidateQueries({ queryKey: ['getMe'] })
+    },
+  })
 }
