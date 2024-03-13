@@ -1,5 +1,5 @@
 import { Link, Outlet } from 'react-router-dom'
-import { useAuth } from '@/providers'
+import { useAuth } from '@/hooks'
 
 export const MainLayout = () => {
   const auth = useAuth()

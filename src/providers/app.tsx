@@ -1,5 +1,5 @@
 import { ReactNode } from 'react'
-import { AuthProvider } from '@/providers/authentication.tsx'
+import { AuthProvider } from '@/providers/authentication'
 import { HelmetProvider } from 'react-helmet-async'
 
 export const AppProvider = ({

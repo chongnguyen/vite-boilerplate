@@ -1,2 +1,2 @@
-export * from './MainLayout.tsx'
-export * from './ContentLayout.tsx'
+export * from './MainLayout'
+export * from './ContentLayout'

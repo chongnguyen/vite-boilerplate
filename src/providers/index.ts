@@ -1,2 +1,2 @@
-export * from './app.tsx'
-export * from './authentication.tsx'
+export * from './app'
+export * from './authentication'
