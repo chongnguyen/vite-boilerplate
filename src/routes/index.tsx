@@ -1,7 +1,8 @@
 import { ProtectedRoute } from '@/components/ProtectedRoute'
 import { ErrorFallback, NotFound } from '@/components/Error'
-import { MainLayout } from '@/components/Layout'
+import { ContentLayout, MainLayout } from '@/components/Layout'
 import { createBrowserRouter } from 'react-router-dom'
+import { counterRoutes } from '@/features/counter'
 
 export const router = createBrowserRouter([
   {
@@ -12,6 +13,12 @@ export const router = createBrowserRouter([
       {
         path: '/',
         element: <MainLayout />,
+        children: [counterRoutes],
+      },
+      {
+        path: '/',
+        element: <ContentLayout />,
+        children: [counterRoutes],
       },
     ],
   },

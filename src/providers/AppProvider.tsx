@@ -4,6 +4,8 @@ import { HelmetProvider } from 'react-helmet-async'
 import { QueryClientProvider } from '@tanstack/react-query'
 import { queryClient } from '@/libs'
 import { Toaster } from 'react-hot-toast'
+import { Provider } from 'react-redux'
+import { store } from '@/stores'
 
 export const AppProvider = ({
   children,
@@ -14,8 +16,10 @@ export const AppProvider = ({
     <>
       <HelmetProvider>
         <QueryClientProvider client={queryClient}>
-          <Toaster position="top-right" reverseOrder={false} />
-          <AuthProvider>{children}</AuthProvider>
+          <Provider store={store}>
+            <Toaster position="top-right" reverseOrder={false} />
+            <AuthProvider>{children}</AuthProvider>
+          </Provider>
         </QueryClientProvider>
       </HelmetProvider>
     </>
